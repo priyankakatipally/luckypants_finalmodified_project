@@ -26,8 +26,8 @@ public class readfromfile {
 }
 	public ArrayList<Book> readCsvFile() {
 		 
-		String csvFile = "D:\\New folder\\samplefile1.csv";
-		//InputStream input = getClass().getClassLoader().getResourceAsStream(csvFile);
+		String csvFile = "samplefile1.csv";
+		InputStream input = getClass().getClassLoader().getResourceAsStream(csvFile);
 		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ",";
@@ -41,8 +41,8 @@ public class readfromfile {
 		
 		try {
 				b=new ArrayList<Book>();
-				//br=new BufferedReader(new InputStreamReader(input));
-				br = new BufferedReader(new FileReader(csvFile));
+				br=new BufferedReader(new InputStreamReader(input));
+				//br = new BufferedReader(new FileReader(csvFile));
 			     while((line = br.readLine()) != null) {
 					String[] book_data = line.split(cvsSplitBy);
 					String stitle='"'+"title"+ '"'+":";
